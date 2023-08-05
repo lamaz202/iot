@@ -44,3 +44,52 @@
     - The loop continues executing, repeating the steps indefinitely.
 
 These steps enable the ESP32 board to connect to a WiFi network and make HTTP requests to specific URLs. The responses received determine the actions performed on the LEDs connected to the board.
+__________________________________________________________________________________________________
+
+TASK 2 
+Connect the ultrasonic sensor and the LED:
+
+Connect the ultrasonic sensor's trigPin to pin 9 of the Arduino.Certainly! Here are the simplified steps followed in the code:
+
+1. Connect the ultrasonic sensor and LED:
+    - Connect the `trigPin` of the ultrasonic sensor to pin 9 of the Arduino.
+    - Connect the `echoPin` of the ultrasonic sensor to pin 10 of the Arduino.
+    Connect an LED to pin 8 of the Arduino.
+
+2. Declare variables:
+    - `duration` will store the time it takes for the ultrasonic wave to travel.
+    - `distance` will store the calculated distance based on the duration.
+
+3. Set up the initial configuration:
+    - Set pin 8 as an output to control the LED.
+    - Set `trigPin` as an output to send signals to the ultrasonic sensor.
+    - Set `echoPin` as an input to receive signals from the ultrasonic sensor.
+    - Initialize the serial communication at a baud rate of 9600.
+
+4. Enter the main loop:
+    - Start an infinite loop that continuously executes the code inside.
+
+5. Measure the distance using the ultrasonic sensor:
+    - Send a short low signal to the `trigPin`.
+    - Introduce a small delay.
+    - Send a short high signal to the `trigPin`.
+    - Introduce a short delay.
+    - Send a low signal to the `trigPin`.
+    - Measure the duration it takes for the echo signal to return using the `pulseIn()` function.
+    - Calculate the distance using the measured duration.
+
+6. Print the distance to the serial monitor:
+    - Display the text "Distance: " using `Serial.print()`.
+    - Display the calculated distance value using `Serial.println()`.
+
+7. Control the LED based on the distance:
+    - If the measured `distance` is less than or equal to 50 cm, turn on the LED.
+    Otherwise, turn off the LED.
+
+8. Repeat the loop:
+    - The loop continues executing indefinitely, repeatedly measuring the distance and controlling the LED.
+
+ the code's allowing the Arduino board to measure distance using an ultrasonic sensor and control an LED accordingly.
+
+
+
